@@ -7,7 +7,7 @@
   <xsl:key name="tree-with-addr" match="/f:tree/f:mainmatter//f:tree" use="f:frontmatter/f:addr/text()" />
 
   <xsl:template match="/">
-    <html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
         <meta name="viewport" content="width=device-width" />
         <link rel="stylesheet" href="style.css" />
@@ -183,9 +183,7 @@
   </xsl:template>
 
   <xsl:template match="f:mainmatter">
-    <div class="tree-content">
-      <xsl:apply-templates />
-    </div>
+     <xsl:apply-templates />
   </xsl:template>
 
   <xsl:template match="f:addr[../f:route]">

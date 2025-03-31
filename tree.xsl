@@ -309,7 +309,7 @@
   <xsl:template match="f:contextual-number[@uri]">
     <xsl:variable name="fallback-number">
       <xsl:text>[</xsl:text>
-      <xsl:value-of select="@uri" />
+      <xsl:value-of select="@display-uri" />
       <xsl:text>]</xsl:text>
     </xsl:variable>
 

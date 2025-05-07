@@ -21,14 +21,6 @@
   </xsl:template>
 
   <!-- HTML and MathML nodes should be copied with namespace prefixes stripped.-->
-
-  <!-- A weird hack to get around the bad behaviour of method="html" -->
-  <xsl:template match="html:br">
-    <xsl:text disable-output-escaping="yes">
-      <![CDATA[<br/>]]>
-    </xsl:text>
-  </xsl:template>
-
   <xsl:template match="html:*">
     <xsl:element namespace="http://www.w3.org/1999/xhtml" name="{local-name()}">
       <xsl:apply-templates select="@* | node()" />
